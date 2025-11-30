@@ -1,0 +1,248 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Hangman Game | Pablodev</title>
+    <link rel="stylesheet" href="/style/index.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/remixicon/4.6.0/remixicon.min.css" integrity="sha512-XcIsjKMcuVe0Ucj/xgIXQnytNwBttJbNjltBV18IOnru2lDPe9KRRyvCXw6Y5H415vbBLRm8+q6fmLUU7DfO6Q==" crossorigin="anonymous" referrerpolicy="no-referrer"/>
+    <link rel="icon" type="image/png" href="/src/logo.png">
+</head>
+<body>
+    
+    <div class="container_Body_Menu_Game">
+        <div class="containerMenuGame">
+            <div class="game_Win">
+                <img src="/src/you_win.png" alt="">
+            </div>
+            <div class="game_Loser">
+                <img src="/src/you_lose.png" alt="">
+            </div>
+            <div class="game_paused">
+                <img src="/src/game_paused.png" alt="">
+            </div>
+
+            <div class="options_Menu">
+                <button class="buttonGame_Continue">Continuar</button>
+                <button class="button_NewCategory">Nueva Categoria</button>
+                <button class="button_restartGame">Salir del Juego</button>
+            </div>
+        </div>
+   </div>
+
+    <div class="container_Start" >
+        <div class="wrapper_Star">
+            <header>
+                <img src="/src/logo_Text.png" alt="">
+            </header>
+
+            <div class="container_StartButton">
+                <button class="playGame_Button"><i class="ri-play-large-fill"></i></button>
+
+                <button class="button_ComoJugar">Como Jugar?</button>
+            </div>
+        </div>
+    </div>
+
+    <div class="container_ComoJugar" >
+        <header>
+            <div class="returnHome">
+                <button class="returnHomeButton_2"><i class="ri-share-forward-fill"></i></button>
+            </div>
+            
+            <div class="title_Header">
+                <span style="text-align: center;">Como Jugar?</span>
+            </div>
+
+            <div></div>
+        </header>
+
+        <div class="container_CardInfo">
+            <div class="card_Info_Game">
+                <span>01</span>
+                ELIJE UNA CATEGORIA
+
+                <p>
+                    Primero, elige una categoría de palabras, como animales o películas. La computadora selecciona aleatoriamente una palabra secreta de ese tema y te da puntos por cada letra de la palabra.
+                </p>
+            </div>
+            <div class="card_Info_Game">
+                <span>02</span>
+                LETRAS DE ADIVINACIÓN
+
+                <p>
+                    Por turnos, intenten adivinar letras. Si aciertan, el ordenador rellenará los espacios en blanco correspondientes. Si fallan, perderán puntos de salud, que se agotarán tras ocho intentos fallidos
+                </p>
+            </div>
+            <div class="card_Info_Game">
+                <span>03</span>
+                GANAR O PERDER
+
+                <p>
+                    Se gana adivinando todas las letras de la palabra antes de que se agote la salud. Si la barra de salud se vacía antes de adivinar la palabra, se pierde.
+                </p>
+            </div>
+        </div>
+    </div>
+
+   <div class="container_Body_Category">
+     <div class="container_StartGame_Category">
+        <header>
+            <div class="returnHome">
+                <button class="returnHomeButton"><i class="ri-share-forward-fill"></i></button>
+            </div>
+            
+            <div class="title_Header">
+                <span style="text-align: center;">Elije una Categoria</span>
+            </div>
+
+            <div></div>
+        </header>
+
+        <div class="container_Category">
+            <div class="container_Cards_Category">
+                <div class="card_Category">
+                    
+                </div>
+                <div class="card_Category">
+                    
+                </div>
+                <div class="card_Category">
+                    
+                </div>
+                <div class="card_Category">
+                   
+                </div>
+                <div class="card_Category">
+                    
+                </div>
+                <div class="card_Category">
+                    
+                </div>
+            </div>
+        </div>
+     </div>
+   </div>
+
+   <div class="container_Body_Game" >
+    <div class="container_GameInterfaz">
+        <div class="container_Header_Game">
+            <div class="nav_1_Game">
+                <div class="returnHome">
+                    <button class="buttonMenuGame"><i class="ri-menu-line"></i></button>
+                </div>
+
+                <div class="name_Category_Game">
+                    <span class="nameCategory"></span>
+                </div>
+            </div>
+
+            <div class="nav_2_Game">
+                <div class="health_Progress">
+                    <div class="health_ProgressBackground"></div>
+                </div>
+
+                <div class="health_Logo">
+                    <i class="ri-heart-fill"></i>
+                </div>
+            </div>
+        </div>
+
+        <div class="container_Letters_Complete">
+        </div>
+
+       <div class="container_Keyboard">
+        <div class="wrapper_Keyboard">
+            <div class="card_key">
+                A
+            </div>
+            <div class="card_key">
+                B
+            </div>
+            <div class="card_key">
+                C
+            </div>
+            <div class="card_key">
+                D
+            </div>
+            <div class="card_key">
+                E
+            </div>
+            <div class="card_key">
+                F
+            </div>
+            <div class="card_key">
+                G
+            </div>
+            <div class="card_key">
+                H
+            </div>
+            <div class="card_key">
+                I
+            </div>
+            <div class="card_key">
+                J
+            </div>
+        </div>
+        <div class="wrapper_Keyboard">
+            <div class="card_key">
+                K
+            </div>
+            <div class="card_key">
+                L
+            </div>
+            <div class="card_key">
+                M
+            </div>
+            <div class="card_key">
+                N
+            </div>
+            <div class="card_key">
+                O
+            </div>
+            <div class="card_key">
+                P
+            </div>
+            <div class="card_key">
+                Q
+            </div>
+            <div class="card_key">
+                R
+            </div>
+            <div class="card_key">
+                S
+            </div>
+            <div class="card_key">
+                T
+            </div>
+        </div>
+        <div class="wrapper_Keyboard">
+            <div class="card_key">
+                U
+            </div>
+            <div class="card_key">
+                V
+            </div>
+            <div class="card_key">
+                W
+            </div>
+            <div class="card_key">
+                X
+            </div>
+            <div class="card_key">
+                Y
+            </div>
+            <div class="card_key">
+                Z
+            </div>
+        </div>
+       </div>
+    </div>
+   </div>
+
+  
+   
+   <script src="index.js"></script>
+</body>
+</html>

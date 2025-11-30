@@ -1,0 +1,100 @@
+{
+    "categories": [
+      {
+        "id": 1,
+        "name": "Película",
+        "words": [
+          {"word": "INCEPTION", "letters": ["I", "N"]},
+          {"word": "TITANIC", "letters": ["T", "A"]},
+          {"word": "AVATAR", "letters": ["A", "V"]},
+          {"word": "GLADIADOR", "letters": ["G", "L"]},
+          {"word": "JURASSIC PARK", "letters": ["J", "U"]},
+          {"word": "FORREST GUMP", "letters": ["F", "O"]},
+          {"word": "ROCKY", "letters": ["R"]},
+          {"word": "EL SILENCIO DE LOS CORDERO", "letters": ["E", "S"]},
+          {"word": "HARRY POTTER", "letters": ["H", "A"]},
+          {"word": "PULP FICTION", "letters": ["P", "U"]}
+        ]
+      },
+      {
+        "id": 2,
+        "name": "Deportes",
+        "words": [
+          {"word": "FUTBOL", "letters": ["F", "U"]},
+          {"word": "TENIS", "letters": ["T"]},
+          {"word": "BASQUETBOL", "letters": ["B", "A"]},
+          {"word": "GOLF", "letters": ["G"]},
+          {"word": "BOXEO", "letters": ["B", "O"]},
+          {"word": "ATLETISMO", "letters": ["A", "T"]},
+          {"word": "CICLISMO", "letters": ["C", "I"]},
+          {"word": "NATACION", "letters": ["N", "A"]},
+          {"word": "RUGBY", "letters": ["R"]},
+          {"word": "ESGRIMA", "letters": ["E", "S"]}
+        ]
+      },
+      {
+        "id": 3,
+        "name": "Animales",
+        "words": [
+          {"word": "ELEFANTE", "letters": ["E", "L"]},
+          {"word": "TIGRE", "letters": ["T"]},
+          {"word": "JIRAFA", "letters": ["J", "I"]},
+          {"word": "ZORRO", "letters": ["Z"]},
+          {"word": "COCODRILO", "letters": ["C", "O"]},
+          {"word": "LEOPARDO", "letters": ["L", "E"]},
+          {"word": "HIPOPOTAMO", "letters": ["H", "I"]},
+          {"word": "SERPIENTE", "letters": ["S", "E"]},
+          {"word": "ORNITORRINCO", "letters": ["O", "R"]},
+          {"word": "BALLENA", "letters": ["B", "A"]}
+        ]
+      },
+      {
+        "id": 4,
+        "name": "Comidas",
+        "words": [
+          {"word": "PIZZA", "letters": ["P", "I"]},
+          {"word": "HAMBURGUESA", "letters": ["H", "A"]},
+          {"word": "PAELLA", "letters": ["P", "A"]},
+          {"word": "SUSHI", "letters": ["S"]},
+          {"word": "TACOS", "letters": ["T"]},
+          {"word": "ENSALADA", "letters": ["E", "N"]},
+          {"word": "SPAGHETTI", "letters": ["S", "P"]},
+          {"word": "DONAUT", "letters": ["D", "O"]},
+          {"word": "EMPANADA", "letters": ["E", "M"]},
+          {"word": "CERVEZA", "letters": ["C", "E"]}
+        ]
+      },
+      {
+        "id": 5,
+        "name": "Países",
+        "words": [
+          {"word": "ARGENTINA", "letters": ["A", "R"]},
+          {"word": "BRAZIL", "letters": ["B", "R"]},
+          {"word": "CANADA", "letters": ["C", "A"]},
+          {"word": "JAPON", "letters": ["J", "A"]},
+          {"word": "AUSTRALIA", "letters": ["A", "U"]},
+          {"word": "MEXICO", "letters": ["M", "E"]},
+          {"word": "FRANCIA", "letters": ["F", "R"]},
+          {"word": "INDIA", "letters": ["I", "N"]},
+          {"word": "SUDAMERICA", "letters": ["S", "U"]},
+          {"word": "EGIPTO", "letters": ["E", "G"]}
+        ]
+      },
+      {
+        "id": 6,
+        "name": "Instrumentos",
+        "words": [
+          {"word": "GUITARRA", "letters": ["G", "U"]},
+          {"word": "PIANO", "letters": ["P"]},
+          {"word": "VIOLIN", "letters": ["V"]},
+          {"word": "TRUMPETA", "letters": ["T", "R"]},
+          {"word": "SINTETIZADOR", "letters": ["S", "I"]},
+          {"word": "BATERIA", "letters": ["B", "A"]},
+          {"word": "CLARINETE", "letters": ["C", "L"]},
+          {"word": "FLAUTA", "letters": ["F"]},
+          {"word": "ACORDEON", "letters": ["A", "C"]},
+          {"word": "HARMONICA", "letters": ["H", "A"]}
+        ]
+      }
+    ]
+  }
