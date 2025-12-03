@@ -145,39 +145,22 @@ function adininarPorLetra (word) {
     const $key_Keyboard = document.querySelectorAll('.card_key');
     const $health_ProgressBackground = document.querySelector('.health_ProgressBackground');
     const $letterAgree = document.querySelectorAll('.letterAgree');
-    const $container_Body_Menu_Game = document.querySelector('.container_Body_Menu_Game');
     const $game_Win = document.querySelector('.game_Win');
     const $game_Loser = document.querySelector('.game_Loser');
     const $game_paused = document.querySelector('.game_paused');
-    const $button_NewCategory = document.querySelector('.button_NewCategory');
     const $container_Letters_Complete = document.querySelector('.container_Letters_Complete');
+    const $container_Body_Menu_Game = document.querySelector('.container_Body_Menu_Game');
     const $containerCategoryGame = document.querySelector('.container_Body_Category');
     const $containerGame = document.querySelector('.container_Body_Game');
     
     let intentIncorrect = 100
-
-    $button_NewCategory.addEventListener('click', () =>{
-        word = []
-        $health_ProgressBackground.style.width = `${intentIncorrect = 100}%`
-        $key_Keyboard.forEach((key) => {
-            key.classList.remove('disable_Key')
-            key.classList.add('card_key')
-        })
-
-        $container_Letters_Complete.innerHTML = '';
-        
-        $containerGame.classList.add('display_Container')
-        $containerCategoryGame.classList.remove('display_Container')
-        $container_Body_Menu_Game.classList.add('display_Container')
-    })
-
-    // const validarLetraVacia = word.findIndex(letter => letter.trim() === '');
+    let wordLetters = word
     
-    const indicesDeEspaciosVacios = word
+    const indicesDeEspaciosVacios = wordLetters
     .map((char, index) => (char === ' ' ? index : -1))
     .filter(index => index !== -1);
     
-    let agreeLettersNew = []
+    let agreeLettersNew = [];
 
     $letterAgree.forEach((letter, index) => {
         agreeLettersNew.push(index)
@@ -188,13 +171,12 @@ function adininarPorLetra (word) {
         
         $letterAgree[pushSpace].classList.remove('letterAgree')
         $letterAgree[pushSpace].classList.add('letterSpace')
-        console.log(pushSpace)
     }
    
 
     for(let i = 0; i < $key_Keyboard.length; i++){
         $key_Keyboard[i].addEventListener('click', () => {
-            const verificarSiExiste = word.findIndex(letter => letter === $key_Keyboard[i].textContent.trim().toLocaleUpperCase())
+            const verificarSiExiste = wordLetters.findIndex(letter => letter === $key_Keyboard[i].textContent.trim().toLocaleUpperCase())
 
             if(verificarSiExiste === -1){
                intentIncorrect -= 20
@@ -217,7 +199,7 @@ function adininarPorLetra (word) {
     
     // b. CONTEO INICIAL DE REPETICIONES
     conteoLetrasRepetidas = {};
-    for (const letra of word) {
+    for (const letra of wordLetters) {
         if (letra !== ' ') { 
             conteoLetrasRepetidas[letra] = (conteoLetrasRepetidas[letra] || 0) + 1;
         }
@@ -234,7 +216,7 @@ function adininarPorLetra (word) {
             let acierto = false;
 
             // Iterar sobre la palabra para encontrar coincidencias
-            word.forEach((correctLetter, index) => {
+            wordLetters.forEach((correctLetter, index) => {
                 if (correctLetter === letraTecleada) {
                     const letterElement = document.querySelectorAll('.container_Letters_Complete > div')[index];
                     if (letterElement) letterElement.textContent = letraTecleada;
@@ -257,9 +239,9 @@ function adininarPorLetra (word) {
                 }
                 
                 // Comprobar Victoria
-                if (letrasAdivinadasContador === word.length) {
+                if (letrasAdivinadasContador === wordLetters.length) {
                     // Muestra el mensaje de Ganador
-                    if($game_paused) $game_paused.classList.add('display_Container')
+                    if ($game_paused) $game_paused.classList.add('display_Container')
                     if ($game_Win) $game_Win.classList.remove('display_Container');
                     if ($container_Body_Menu_Game) $container_Body_Menu_Game.classList.remove('display_Container');
                 }
@@ -276,6 +258,62 @@ function buttonRestartGame () {
     })
 }
 
+// ==========================================================
+// 1. FUNCIÓN PARA GESTIONAR LA RECARGA Y GUARDAR EL ESTADO
+// ==========================================================
+
+function buttonNewCategory () {
+    const $button_NewCategory = document.querySelector('.button_NewCategory');
+
+    if ($button_NewCategory) {
+        $button_NewCategory.addEventListener('click', () => {
+            // Establece una bandera en el almacenamiento de sesión
+            // para indicar que la interfaz de categoría debe mostrarse
+            sessionStorage.setItem('showCategoryInterface', 'true');
+            
+            // Recarga la página
+            location.reload(true);
+        });
+    }
+}
+
+// ==========================================================
+// 2. FUNCIÓN PARA CARGAR EL ESTADO Y CAMBIAR LA INTERFAZ
+// ==========================================================
+
+function loadInterfaceState() {
+    const shouldShowCategory = sessionStorage.getItem('showCategoryInterface');
+
+    if (shouldShowCategory === 'true') {
+        // --- Paso de Depuración 1: Confirmar que entramos al IF ---
+        
+        const $container_Body_Menu_Game = document.querySelector('.container_Body_Menu_Game');
+        const $containerCategoryGame = document.querySelector('.container_Body_Category');
+        const $containerGame = document.querySelector('.container_Start');
+
+        // Aplica las clases para mostrar la interfaz deseada
+        if ($containerGame && $containerCategoryGame && $container_Body_Menu_Game) {
+            // Esta línea es la clave para ocultar el juego:
+            $containerGame.classList.add('display_Container');
+            $containerCategoryGame.classList.remove('display_Container');
+            $container_Body_Menu_Game.classList.add('display_Container');
+
+            // Limpia la bandera
+            sessionStorage.removeItem('showCategoryInterface');
+        }
+    }
+}
+
+// ==========================================================
+// 3. EJECUCIÓN DEL CÓDIGO AL CARGAR LA PÁGINA
+// ==========================================================
+
+// Ejecuta las funciones una vez que todo el DOM esté cargado
+document.addEventListener('DOMContentLoaded', () => {
+    buttonNewCategory(); // Configura el evento de clic en el botón
+    loadInterfaceState(); // Revisa si hay que cambiar la interfaz después de una recarga
+});
+
 obtenerCategoriasDeApi ()
-buttonRestartGame ()
 elejirCategoria()
+buttonRestartGame ()
